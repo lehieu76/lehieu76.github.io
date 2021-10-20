@@ -1,3 +1,8 @@
+function doGet(request) {
+  return HtmlService.createTemplateFromFile('index').evaluate()
+.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
 customElements.define('x-frame-bypass', class extends HTMLIFrameElement {
 	static get observedAttributes() {
 		return ['src']
